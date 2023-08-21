@@ -8,6 +8,7 @@
                 'classe' => 'Etudiant',
                 'methode' => 'getFormAuth'
             ],
+
             'authentification' => [
                 'classe' => 'Etudiant',
                 'methode' => 'authentification'
@@ -18,8 +19,20 @@
         private $allRequestAdmin = [
             'motCleAdmin' => [
                 'classe' => 'Admin',
+                'methode' => 'getFormAuth'
+            ],
+            'adminuth' => [
+                'classe' => 'Admin',
                 'methode' => 'authentification'
             ]
+        ];
+
+        private $allRequestBulletin = [
+            'bulletin' => [
+                'classe' => 'Bulletin',
+                'methode' => 'afficher'
+            ]
+
         ];
 
         public function __construct($request){
@@ -34,7 +47,7 @@
                 
                 $classe = $this->allRequestEtudiant[$request]['classe'];
                 $methode = $this->allRequestEtudiant[$request]['methode'];
-                require_once(CONTROLLER_ETUDIANT.$classe.'.php');
+                require_once(CONTROLLER_ETUDIANT);
 
                 $instance = new $classe();
                 $instance->$methode();
@@ -45,7 +58,17 @@
                 $classe = $this->allRequestAdmin[$request]['classe'];
                 $methode = $this->allRequestAdmin[$request]['methode'];
 
-                include(CONTROLLER_ADMIN.$classe.'.php');
+                include(CONTROLLER_ADMIN);
+
+                $instance = new $classe();
+                $instance->$methode();
+            }
+            else if(key_exists($request, $this->allRequestBulletin)){
+                //recuperation de la classe et la méthode cherchée
+                $classe = $this->allRequestBulletin[$request]['classe'];
+                $methode = $this->allRequestBulletin[$request]['methode'];
+
+                include(CONTROLLER_BULLETIN);
 
                 $instance = new $classe();
                 $instance->$methode();

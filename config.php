@@ -8,13 +8,15 @@ $root = $_SERVER['DOCUMENT_ROOT'];
 define('HOST', 'http://'.$host.'/archiveResult/');
 define('ROOT', $root.'/archiveResult/');
 
-define('CONTROLLER_ADMIN', ROOT.'controllers/admin/');
-define('MODEL_ADMIN', ROOT.'models/admin/');
+define('CONTROLLER_ADMIN', ROOT.'controllers/Admin.php');
+define('MODEL_ADMIN', ROOT.'models/Admin.php');
 define('VIEW_ADMIN', ROOT.'views/admin/');
 
-define('CONTROLLER_ETUDIANT', ROOT.'controllers/etudiant/');
-define('MODEL_ETUDIANT', ROOT.'models/etudiant/');
-define('VIEW_ETUDIANT', ROOT.'views/etudiant/');
+define('CONTROLLER_BULLETIN', ROOT.'controllers/Bulletin.php');
+
+define('CONTROLLER_ETUDIANT', ROOT.'controllers/Etudiant.php');
+define('MODEL_ETUDIANT', ROOT.'models/Etudiant.php');
+define('VIEW_ETUDIANT', ROOT.'views/admin/');
 
 define('ROUTEUR', ROOT.'routeur/routeur.php');
 
