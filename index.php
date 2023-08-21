@@ -2,14 +2,11 @@
 include('config.php');
 
 
-if(key_exists('r', $_GET)){
+if(!isset($_GET['r']))
+    $request = 'home';
+else
     $request = $_GET['r'];
 
-    require(ROUTEUR);
-
-    $routeur = new Routeur($request);
-    $routeur->renderController();
-}
-else{
-    echo 'Erreur 404';
-}
+require(ROUTEUR);
+$routeur = new Routeur($request);
+$routeur->renderController();

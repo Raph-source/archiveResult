@@ -5,12 +5,12 @@
         //les URLs de l'étudiant
         private $allRequestEtudiant = [
             'home' => [
-                'classe' => 'Etudiant',
+                'classe' => 'EtudiantController',
                 'methode' => 'getFormAuth'
             ],
 
             'authentification' => [
-                'classe' => 'Etudiant',
+                'classe' => 'EtudiantController',
                 'methode' => 'authentification'
             ]
         ];
@@ -18,18 +18,18 @@
         //les URLs de l'admin
         private $allRequestAdmin = [
             'motCleAdmin' => [
-                'classe' => 'Admin',
+                'classe' => 'AdminController',
                 'methode' => 'getFormAuth'
             ],
-            'adminuth' => [
-                'classe' => 'Admin',
+            'adminAuth' => [
+                'classe' => 'AdminController',
                 'methode' => 'authentification'
             ]
         ];
 
         private $allRequestBulletin = [
             'bulletin' => [
-                'classe' => 'Bulletin',
+                'classe' => 'BulletinController',
                 'methode' => 'afficher'
             ]
 
@@ -44,7 +44,6 @@
 
             if (key_exists($request, $this->allRequestEtudiant)){
                 //recuperation de la classe et la méthode cherchée
-                
                 $classe = $this->allRequestEtudiant[$request]['classe'];
                 $methode = $this->allRequestEtudiant[$request]['methode'];
                 require_once(CONTROLLER_ETUDIANT);

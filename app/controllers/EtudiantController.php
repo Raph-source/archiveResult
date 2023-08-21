@@ -1,5 +1,5 @@
 <?php
-    class Etudiant{
+    class EtudiantController{
         public function getFormAuth(){
             include(VIEW_ETUDIANT.'authentification.php');
         }
