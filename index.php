@@ -9,4 +9,4 @@ else
 
 require(ROUTEUR);
 $routeur = new Routeur($request);
-$routeur->renderController();
+$routeur->goToController();

@@ -1,78 +1,48 @@
 <?php
     class Routeur{
-        private $request;
+        private $request;//l'url demandé
 
-        //les URLs de l'étudiant
-        private $allRequestEtudiant = [
-            'home' => [
-                'classe' => 'EtudiantController',
-                'methode' => 'getFormAuth'
+        //le tableau des URLs, controleurs et leurs méthodes
+        private $allRequest = [
+            'EtudiantController' => [
+                'home' => 'getFormAuth',
+                'authEtudiant' => 'authentification'
             ],
 
-            'authentification' => [
-                'classe' => 'EtudiantController',
-                'methode' => 'authentification'
-            ]
-        ];
-
-        //les URLs de l'admin
-        private $allRequestAdmin = [
-            'motCleAdmin' => [
-                'classe' => 'AdminController',
-                'methode' => 'getFormAuth'
+            'AdminController' => [
+                'motCleAdmin' => 'getFormAuth',
+                'adminAuth' => 'authentification'
             ],
-            'adminAuth' => [
-                'classe' => 'AdminController',
-                'methode' => 'authentification'
-            ]
-        ];
 
-        private $allRequestBulletin = [
             'bulletin' => [
-                'classe' => 'BulletinController',
-                'methode' => 'afficher'
+                'bulletin' => 'afficher'
             ]
-
         ];
-
+       
         public function __construct($request){
             $this->request = $request;
         }
         //cette fonction renvoi au controleur demandé
-        public function renderController(){
-            $request = $this->request;
+        public function goToController(){
+            //inclusion des controleurs
+            require_once(CONTROLLER_ETUDIANT);
+            require_once(CONTROLLER_ADMIN);
+            require_once(CONTROLLER_BULLETIN);
 
-            if (key_exists($request, $this->allRequestEtudiant)){
-                //recuperation de la classe et la méthode cherchée
-                $classe = $this->allRequestEtudiant[$request]['classe'];
-                $methode = $this->allRequestEtudiant[$request]['methode'];
-                require_once(CONTROLLER_ETUDIANT);
+            //instantiation du controleur et déclanchement de la méthode
+            $trouver = false;
+            foreach($this->allRequest as $controller => $url_controller){
+                if(key_exists($this->request, $url_controller)){
+                    $methode = $url_controller[$this->request];
+                    $classeController = new $controller();//instantiation du controleur
+                    $classeController->$methode();//déclanchement de la méthode
+                    $trouver = true;
 
-                $instance = new $classe();
-                $instance->$methode();
-
+                    break;
+                }
             }
-            else if(key_exists($request, $this->allRequestAdmin)){
-                //recuperation de la classe et la méthode cherchée
-                $classe = $this->allRequestAdmin[$request]['classe'];
-                $methode = $this->allRequestAdmin[$request]['methode'];
 
-                include(CONTROLLER_ADMIN);
-
-                $instance = new $classe();
-                $instance->$methode();
-            }
-            else if(key_exists($request, $this->allRequestBulletin)){
-                //recuperation de la classe et la méthode cherchée
-                $classe = $this->allRequestBulletin[$request]['classe'];
-                $methode = $this->allRequestBulletin[$request]['methode'];
-
-                include(CONTROLLER_BULLETIN);
-
-                $instance = new $classe();
-                $instance->$methode();
-            }
-            else
+            if(!$trouver)
                 echo 'Erreur 404';
-        }
+        }   
     }

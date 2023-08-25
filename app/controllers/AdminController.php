@@ -17,7 +17,7 @@
                 if($this->model->checkAdmin()){
                     include(VIEW_ADMIN.'home.php');
                 }else{
-                    $notif = "Pas de champ vide";
+                    $notif = "mot de passe ou pseudo incorrecte";
                     include(VIEW_ADMIN.'authentification.php');
                 }
             }
