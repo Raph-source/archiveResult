@@ -28,3 +28,6 @@ define('ROUTEUR', ROOT.'routeur/routeur.php');
 
 //lien absolue vers les assets (css, js, img)
 define('ASSET', HOST.'assets/');
+
+//lien absolu vers le dossier uploads
+define('UPLOADS', ROOT.'uploads/');

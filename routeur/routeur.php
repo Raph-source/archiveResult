@@ -11,7 +11,9 @@
 
             'AdminController' => [
                 'motCleAdmin' => 'getFormAuth',
-                'adminAuth' => 'authentification'
+                'adminAuth' => 'authentification',
+                'publication' => 'getViewPublication',
+                'publication-resultat' => 'publication'
             ],
 
             'bulletin' => [
@@ -43,6 +45,6 @@
             }
 
             if(!$trouver)
-                echo 'Erreur 404';
+                echo 'Ereur 404';
         }   
     }
