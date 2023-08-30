@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 $host = $_SERVER['HTTP_HOST'];
 $root = $_SERVER['DOCUMENT_ROOT'];
 
-define('HOST', 'http://'.$host.'/archiveResult/');//lien absolu du projet
+define('HOST', 'https://'.$host.'/archiveResult/');//lien absolu du projet
 define('ROOT', $root.'/archiveResult/');//adresse absolue du projet
 
 //adresse absolue vers les fichiers app (controllers, models, views) 
@@ -26,8 +26,8 @@ define('FOOTER', ROOT.'app/views/footer.php');
 //adresse absolue vers routeur
 define('ROUTEUR', ROOT.'routeur/routeur.php');
 
-//lien absolue vers les assets (css, js, img)
-define('ASSET', HOST.'assets/');
+//chemin absolu vers les assets css
+define('ASSETS_CSS', HOST.'assets/css/');
 
-//lien absolu vers le dossier uploads
-define('UPLOADS', ROOT.'uploads/');
+//chemin absolu vers les assets js
+define('ASSETS_JS', HOST.'assets/js/');

@@ -1,5 +1,6 @@
 <?php
 $title = 'home';
+$style = ASSETS_CSS.'admin/publication.css';
 require_once(HEADER);
 ?>
 <h1>Publication du résultat</h1>
