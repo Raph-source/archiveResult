@@ -11,4 +11,7 @@ require_once(HEADER);
     </form>
     <?php if(isset($notif)) echo $notif;?>
     
-<?php require_once(FOOTER); ?>
+<?php 
+$srcipt = ASSETS_CSS.'admin/authentification.js';
+require_once(FOOTER); 
+?>

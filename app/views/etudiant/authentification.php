@@ -1,5 +1,6 @@
 <?php 
 $title = 'authentification';
+$style = ASSETS_CSS.'etudiant/authentification.css';
 require_once(HEADER); 
 ?>
     <h1>page d'authentification de l'etudiant</h1>
@@ -8,4 +9,7 @@ require_once(HEADER);
         <input type="password" name="code" placeholder="Entrez le code d'accès" id=""><br>
         <input type="submit" value="Envoyer">
     </form>
-<?php require_once(FOOTER); ?>
+<?php 
+$script = ASSETS_JS.'etudiant/authentification.js';
+require_once(FOOTER); 
+?>
