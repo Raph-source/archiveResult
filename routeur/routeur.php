@@ -31,20 +31,24 @@
             require_once(CONTROLLER_ADMIN);
             require_once(CONTROLLER_BULLETIN);
 
+            require_once(MODEL_ADMIN);
+            require_once(MODEL_ETUDIANT);
+            require_once(MODEL_BULLETIN);
+
             //instantiation du controleur et déclanchement de la méthode
-            $trouver = false;
+            $_404 = false;
             foreach($this->allRequest as $controller => $url_controller){
                 if(key_exists($this->request, $url_controller)){
                     $methode = $url_controller[$this->request];
                     $classeController = new $controller();//instantiation du controleur
                     $classeController->$methode();//déclanchement de la méthode
-                    $trouver = true;
+                    $_404 = true;
 
                     break;
                 }
             }
 
-            if(!$trouver)
+            if(!$_404)
                 echo 'Ereur 404';
         }   
     }

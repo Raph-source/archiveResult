@@ -14,6 +14,7 @@ define('MODEL_ADMIN', ROOT.'app/models/Admin.php');
 define('VIEW_ADMIN', ROOT.'app/views/admin/');
 
 define('CONTROLLER_BULLETIN', ROOT.'app/controllers/BulletinController.php');
+define('MODEL_BULLETIN', ROOT.'app/models/Bulletin.php');
 
 define('CONTROLLER_ETUDIANT', ROOT.'app/controllers/EtudiantController.php');
 define('MODEL_ETUDIANT', ROOT.'app/models/Etudiant.php');
