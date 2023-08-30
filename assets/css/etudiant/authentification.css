@@ -1,4 +1,21 @@
 *{
-    padding: 0%;
+    padding: 0;
     margin:0;
+}
+body{
+    background-color: rgb(236, 234, 234);
+}
+
+section{
+    background-color: white;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+section .title{
+    background: green;
+    color: white;
+    padding: 20px;
 }

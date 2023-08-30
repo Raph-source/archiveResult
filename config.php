@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 $host = $_SERVER['HTTP_HOST'];
 $root = $_SERVER['DOCUMENT_ROOT'];
 
-define('HOST', 'https://'.$host.'/archiveResult/');//lien absolu du projet
+define('HOST', 'http://'.$host.'/archiveResult/');//lien absolu du projet
 define('ROOT', $root.'/archiveResult/');//adresse absolue du projet
 
 //adresse absolue vers les fichiers app (controllers, models, views) 
