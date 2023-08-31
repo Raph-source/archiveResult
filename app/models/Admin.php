@@ -14,7 +14,7 @@
         }
         //la méthode vérifie si l'admin est dans la bdd
         public function checkAdmin(): bool{
-            $requete = $this->bdd->prepare("SELECT pseudo, pwd FROM pseudo WHERE pseudo = ? AND pwd = ?");
+            $requete = $this->bdd->prepare("SELECT pseudo, pwd FROM admin WHERE pseudo = ? AND pwd = ?");
             $requete->execute([$this->pseudo, $this->pwd]);
             $trouver = $requete->fetchAll();
 
