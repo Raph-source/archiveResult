@@ -1,3 +1,45 @@
-h1{
-    background-color: brown;
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: rgb(250, 250, 250)
+}
+
+section{
+    background-color: white;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+section .title{
+    background: green;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+}
+
+section form{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+section form input{
+    margin-top: 15px;
+    height: 65px;
+}
+
+section form hr{
+    margin-top: 30px;
+}
+
+section form input[type="submit"]{
+    width: 100%;
 }

@@ -10,12 +10,13 @@
 <section class="section">
         <p class="title">EsisSalama</p>
         <form action="auth-etudiant" method="post" class="form-group">
-            <label for="">Email</label>
+            <label for="">Matricule</label>
             <input type="text" name="matricule" class="form-control" placeholder="Entrez le matricule" id=""><br>
 
-            <label for="">Mot de passe</label>
-            <input type="password" name="code" placeholder="Entrez le code d'accès" id=""><br>
-            <input type="submit" value="Envoyer">
+            <label for="">Code d'accés</label>
+            <input type="password" name="code" class="form-control" placeholder="Entrez le code d'accès" id="">
+            <hr>
+            <input type="submit" value="Envoyer" class="btn btn-primary">
         </form>
 </section>
 
