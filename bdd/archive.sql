@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le : lun. 28 août 2023 à 22:25
--- Version du serveur : 5.7.36
--- Version de PHP : 8.2.9
+-- Hôte : localhost
+-- Généré le : jeu. 31 août 2023 à 16:35
+-- Version du serveur : 10.4.28-MariaDB
+-- Version de PHP : 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,13 +27,20 @@ SET time_zone = "+00:00";
 -- Structure de la table `admin`
 --
 
-DROP TABLE IF EXISTS `admin`;
-CREATE TABLE IF NOT EXISTS `admin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `matricule` varchar(255) DEFAULT NULL,
-  `mdp` varchar(6) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `pseudo` varchar(30) DEFAULT NULL,
+  `pwd` varchar(16) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `admin`
+--
+
+INSERT INTO `admin` (`id`, `pseudo`, `pwd`) VALUES
+(1, 'raph', '1234'),
+(2, 'olivier', 'olux2023'),
+(3, 'gustave', '0000');
 
 -- --------------------------------------------------------
 
@@ -41,24 +48,10 @@ CREATE TABLE IF NOT EXISTS `admin` (
 -- Structure de la table `bulletin`
 --
 
-DROP TABLE IF EXISTS `bulletin`;
-CREATE TABLE IF NOT EXISTS `bulletin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `chemin` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `etat_etudiant`
---
-
-DROP TABLE IF EXISTS `etat_etudiant`;
-CREATE TABLE IF NOT EXISTS `etat_etudiant` (
-  `id_etudiant` int(11) DEFAULT NULL,
-  KEY `fk_id_etudiant` (`id_etudiant`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE `bulletin` (
+  `id` int(11) NOT NULL,
+  `chemin` varchar(256) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -66,15 +59,67 @@ CREATE TABLE IF NOT EXISTS `etat_etudiant` (
 -- Structure de la table `etudiant`
 --
 
-DROP TABLE IF EXISTS `etudiant`;
-CREATE TABLE IF NOT EXISTS `etudiant` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `matriclue` varchar(255) DEFAULT NULL,
-  `mdp` varchar(6) DEFAULT NULL,
-  `id_bulletin` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_id_bulletin` (`id_bulletin`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE `etudiant` (
+  `id` int(11) NOT NULL,
+  `matricule` varchar(7) DEFAULT NULL,
+  `email` varchar(30) DEFAULT NULL,
+  `id_bulletin` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `bulletin`
+--
+ALTER TABLE `bulletin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `etudiant`
+--
+ALTER TABLE `etudiant`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_bulletin` (`id_bulletin`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `bulletin`
+--
+ALTER TABLE `bulletin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `etudiant`
+--
+ALTER TABLE `etudiant`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `etudiant`
+--
+ALTER TABLE `etudiant`
+  ADD CONSTRAINT `etudiant_ibfk_1` FOREIGN KEY (`id_bulletin`) REFERENCES `bulletin` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
