@@ -1,4 +1,6 @@
 <?php
+    require_once(BIBLIOTHEQUE.'vendor/autoload.php');
+    use PhpOffice\PhpSpreadsheet\IOFactory;
     class EtudiantController{
         private $model;
 
@@ -35,6 +37,9 @@
         }
 
         public function voirResultat(){
-            require_once(BIBLIOTHEQUE.'');
+            $spreadsheet = IOFactory::load(UPLOADS.'14 Formulas.xlsx');
+            $worksheet = $spreadsheet->getActiveSheet();
+            $value = $worksheet->getCell('b2')->getValue();
+            echo $value;
         }
     }
