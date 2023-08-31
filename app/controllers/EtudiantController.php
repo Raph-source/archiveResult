@@ -40,6 +40,17 @@
             $spreadsheet = IOFactory::load(UPLOADS.'14 Formulas.xlsx');
             $worksheet = $spreadsheet->getActiveSheet();
             $value = $worksheet->getCell('b2')->getValue();
+
             echo $value;
+
+            require_once(BIBLIOTHEQUE.'tcpdf/tcpdf.php');
+            $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+
+            $pdf->SetTitle('Titre du PDF');
+            $pdf->AddPage();
+            $pdf->writeHTML('<h1>Mon premier PDF avec TCPDF</h1>');
+
+            $pdf->Output(STORAGE.'test.pdf', 'F');
+
         }
     }
