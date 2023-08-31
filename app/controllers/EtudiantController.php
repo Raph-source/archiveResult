@@ -16,7 +16,12 @@
                 $code = htmlspecialchars($_POST['code']);
 
                 $this->model->setAtribut($matricule, $code);
+                session_start();
+
                 if($this->model->checkEtudiant()){
+                    //mise en session
+                    $_SESSION['matricule'] = $matricule;
+                    $_SESSION['code'] = $code;
                     include(VIEW_ETUDIANT.'home.php');
                 }else{
                     $notif = "mot de passe ou pseudo incorrecte";
@@ -27,5 +32,9 @@
                 $notif = "Pas de champ vide";
                 include(VIEW_ETUDIANT.'authentification.php');
             }
+        }
+
+        public function voirResultat(){
+            require_once(BIBLIOTHEQUE.'');
         }
     }

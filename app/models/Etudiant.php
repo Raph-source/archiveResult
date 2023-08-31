@@ -15,7 +15,7 @@
         }
         //la méthode vérifie si l'étudiant est dans la bdd
         public function checkEtudiant(): bool{
-            $requete = $this->bdd->prepare("SELECT pseudo, pwd FROM etudiant WHERE pseudo = ? AND pwd = ?");
+            $requete = $this->bdd->prepare("SELECT matriclue, mdp FROM etudiant WHERE matriclue = ? AND mdp = ?");
             $requete->execute([$this->matricule, $this->code]);
             $trouver = $requete->fetchAll();
 

@@ -6,7 +6,8 @@
         private $allRequest = [
             'EtudiantController' => [
                 'home' => 'getFormAuth',
-                'authEtudiant' => 'authentification'
+                'auth-etudiant' => 'authentification',
+                'voir-resultat' => 'voirResultat'
             ],
 
             'AdminController' => [

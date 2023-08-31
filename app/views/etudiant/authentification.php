@@ -1,14 +1,17 @@
 <?php 
     $title = 'authentification';
     $style = ASSETS_CSS.'etudiant/authentification.css';
+    $bootstrap = ASSETS_BOOTSTRAP;
     require_once(HEADER); 
+    if(isset($notif))
+        echo $notif;
 ?>
 
 <section class="section">
         <p class="title">EsisSalama</p>
-        <form action="authEtudiant" method="post" class="form-group">
+        <form action="auth-etudiant" method="post" class="form-group">
             <label for="">Email</label>
-            <input type="text" name="matricule" placeholder="Entrez le matricule" id=""><br>
+            <input type="text" name="matricule" class="form-control" placeholder="Entrez le matricule" id=""><br>
 
             <label for="">Mot de passe</label>
             <input type="password" name="code" placeholder="Entrez le code d'accès" id=""><br>
