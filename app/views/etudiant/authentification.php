@@ -8,7 +8,7 @@
 ?>
 
 <section class="section">
-        <p class="title">EsisSalama</p>
+        <p class="title">Esis Salama</p>
         <form action="auth-etudiant" method="post" class="form-group">
             <label for="">Matricule</label>
             <input type="text" name="matricule" class="form-control" placeholder="Entrez le matricule" id=""><br>
