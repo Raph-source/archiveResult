@@ -16,7 +16,9 @@ require_once(HEADER);
         <hr>
         <input type="submit" value="valider" class="btn btn-primary">
     </form>
-    <?php if(isset($notif)) echo $notif;?>
+    <?php if(isset($notif)) echo '<span class="erreurAdmin">'.$notif.'</span>';?>
+
+
 </section>
 <?php 
 $srcipt = ASSETS_CSS.'admin/authentification.js';

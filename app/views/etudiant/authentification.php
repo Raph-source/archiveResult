@@ -3,8 +3,6 @@
     $style = ASSETS_CSS.'etudiant/authentification.css';
     $bootstrap = ASSETS_BOOTSTRAP;
     require_once(HEADER); 
-    if(isset($notif))
-        echo $notif;
 ?>
 
 <section class="section">
@@ -18,6 +16,7 @@
             <hr>
             <input type="submit" value="Envoyer" class="btn btn-primary">
         </form>
+        <?php if(isset($notif)) echo '<span class="erreurAdmin">'.$notif.'</span>';?>
 </section>
 
 

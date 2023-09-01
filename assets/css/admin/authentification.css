@@ -43,3 +43,10 @@ section form hr{
 section form input[type="submit"]{
     width: 100%;
 }
+
+section .erreurAdmin{
+    display: block;
+    color:red;
+    text-align: center;
+    padding-bottom: 10px;
+}
