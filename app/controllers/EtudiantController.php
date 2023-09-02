@@ -1,4 +1,5 @@
 <?php
+    require_once(MODEL.'Etudiant.php');
     require_once(BIBLIOTHEQUE.'vendor/autoload.php');
     use PhpOffice\PhpSpreadsheet\IOFactory;
     class EtudiantController{
