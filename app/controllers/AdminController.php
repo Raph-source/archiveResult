@@ -1,5 +1,5 @@
 <?php
-    require_once(MODEL_ADMIN);
+    require_once(MODEL.'Admin.php');
     class AdminController{
         private $model;
         public function __construct(){
@@ -41,9 +41,29 @@
                     
                     if($typeFichier == 'xlsx'){//si l'extension est correcte
                         $name = $_FILES['fichierExcel']['name'];
+                        $nom = explode('.', $name)[0];//enlever l'extension
+                        $this->model->promotion->setNom($nom);
 
-                        move_uploaded_file($_FILES['fichierExcel']['tmp_name'], UPLOADS.$name);
-                        $notif = "le resultat à été publier avec succès";
+                        if($this->model->promotion->checkNomPromotion()){
+                            //l'upload du fichier
+                            try{
+                                move_uploaded_file($_FILES['fichierExcel']['tmp_name'], UPLOADS.$name);
+                                $notif = "le resultat à été publier avec succès<br>";
+                                $this->model->excel->setChemin(UPLOADS.$name);//mise du chemin dans la bdd
+                                //récuperation de l'id
+                                $idExcel = $this->model->excel->getId(UPLOADS.$name);
+
+                                //insertion de l'idExcel dans table promotion
+                                $this->model->promotion->setIdExcel($idExcel);
+
+                            }catch(Exception $e){
+                                $notif = "échec de publication<br>";
+                            }
+                            
+                        }
+                        else{
+                            $notif = "cette promotion n'existe pas<br>";
+                        }
                         include_once(VIEW_ADMIN.'home.php');
                     }
                     else{
@@ -60,5 +80,9 @@
                 $notif = "Veuillez selectionner le fichier excel";
                 include_once(VIEW_ADMIN.'publication.php');
             }
+        }
+
+        public function donnerAcces(){
+            
         }
     }

@@ -14,7 +14,8 @@
                 'motCleAdmin' => 'getFormAuth',
                 'adminAuth' => 'authentification',
                 'publication' => 'getViewPublication',
-                'publication-resultat' => 'publication'
+                'publication-resultat' => 'publication',
+                'formulaire-donner-acces' => 'donnerAcces'
             ],
 
             'bulletin' => [
@@ -31,10 +32,6 @@
             require_once(CONTROLLER_ETUDIANT);
             require_once(CONTROLLER_ADMIN);
             require_once(CONTROLLER_BULLETIN);
-
-            require_once(MODEL_ADMIN);
-            require_once(MODEL_ETUDIANT);
-            require_once(MODEL_BULLETIN);
 
             //instantiation du controleur et déclanchement de la méthode
             $_404 = false;
