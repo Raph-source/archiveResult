@@ -1,3 +1,44 @@
-a{
-    background-color: red;
+*{
+    padding: 0;
+    margin: 0;
+}
+section{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section .content_1, section .content_2{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+section .content_1 .block, section .content_2 .block{
+    width: 40%;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+section .content_1 .block:hover, section .content_2 .block:hover{
+    transform: scale(1.1);
+}
+
+section .content_1 .block .image, section .content_2 .block .image{
+    width: 20%;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 30px;
+    background-color: blueviolet;
+    border-radius: 4px;
+}
+
+section .content_1 .block a, section .content_2 .block a{
+    display: block;
+    padding: 20px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    
 }
