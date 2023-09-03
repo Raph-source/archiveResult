@@ -8,7 +8,7 @@ if(isset($notif))
 
 include_once('option.php');
 ?>
-<h1>home admin</h1>
+<h1>admin</h1>
 <?php
 require_once(FOOTER);
 ?>
