@@ -17,7 +17,10 @@
                 'publication-resultat' => 'publication',
                 'formulaire-donner-acces' => 'donnerAcces', 
                 'retour-option' => 'retourOption',
-                'notification' => 'getFormNotification'
+                'notification' => 'getFormNotification',
+                'donnerAcces' => 'getFormDonnerAcces',
+                'bloquerAcces' => 'getBloquerAcces',
+                'formulaire-bloquer-acces' => 'bloquerAcces'
             ],
 
             'bulletin' => [

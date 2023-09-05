@@ -1,6 +1,6 @@
 <?php
 $title = 'notification';
-$style = ASSETS_CSS.'admin/home.css';
+$style = ASSETS_CSS.'admin/notification.css';
 require_once(HEADER);
 
 ?>

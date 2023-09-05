@@ -82,10 +82,6 @@
             }
         }
 
-        public function donnerAcces(){
-            
-        }
-
         public function retourOption(){
             require_once(VIEW_ADMIN.'option.php');
         }
@@ -93,5 +89,25 @@
         public function getFormNotification(){
             $trouver = $this->model->promotion->getAllPromotion();
             require_once(VIEW_ADMIN.'notification.php');
+        }
+
+        public function notifier(){
+
+        }
+
+        public function getFormDonnerAcces(){
+            require_once(VIEW_ADMIN.'donnerAcces.php');    
+        }
+
+        public function donnerAcces(){
+            
+        }
+
+        public function getBloquerAcces(){
+            require_once(VIEW_ADMIN.'bolquerAcces.php');
+        }
+
+        public function bloquerAcces(){
+            
         }
     }
