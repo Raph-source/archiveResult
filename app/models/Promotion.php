@@ -10,9 +10,9 @@ class Promotion{
         $this->nom = $nom;
     }
     public function checkNomPromotion():bool{
-        $requette = $this->bdd->prepare("SELECT * FROM promotion WHERE nom = ?");
-        $requette->execute([$this->nom]);
-        $trouver = $requette->fetchAll();
+        $requete = $this->bdd->prepare("SELECT * FROM promotion WHERE nom = ?");
+        $requete->execute([$this->nom]);
+        $trouver = $requete->fetchAll();
         
         if(count($trouver) != 0)
             return true;
@@ -20,7 +20,14 @@ class Promotion{
     }
 
     public function setIdExcel($idExcel){
-        $requette = $this->bdd->prepare("UPDATE promotion SET idExcel = ? WHERE nom = ?");
-        $requette->execute([$idExcel, $this->nom]);
+        $requete = $this->bdd->prepare("UPDATE promotion SET idExcel = ? WHERE nom = ?");
+        $requete->execute([$idExcel, $this->nom]);
+    }
+
+    public function getAllPromotion():array{
+        $requete = $this->bdd->query("SELECT * FROM promotion");
+        $trouver = $requete->fetchAll();
+
+        return $trouver;
     }
 } 

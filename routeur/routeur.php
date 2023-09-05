@@ -16,7 +16,8 @@
                 'publication' => 'getViewPublication',
                 'publication-resultat' => 'publication',
                 'formulaire-donner-acces' => 'donnerAcces', 
-                'retour-option' => 'retourOption'
+                'retour-option' => 'retourOption',
+                'notification' => 'getFormNotification'
             ],
 
             'bulletin' => [

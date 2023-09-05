@@ -89,4 +89,9 @@
         public function retourOption(){
             require_once(VIEW_ADMIN.'option.php');
         }
+
+        public function getFormNotification(){
+            $trouver = $this->model->promotion->getAllPromotion();
+            require_once(VIEW_ADMIN.'notification.php');
+        }
     }
