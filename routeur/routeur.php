@@ -7,7 +7,8 @@
             'EtudiantController' => [
                 'home' => 'getFormAuth',
                 'auth-etudiant' => 'authentification',
-                'voir-resultat' => 'voirResultat'
+                'voir-resultat' => 'voirResultat',
+                'promotion' => 'getOption'
             ],
 
             'AdminController' => [

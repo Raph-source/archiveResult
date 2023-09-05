@@ -25,7 +25,9 @@
                     //mise en session
                     $_SESSION['matricule'] = $matricule;
                     $_SESSION['code'] = $code;
-                    include(VIEW_ETUDIANT.'home.php');
+
+                    $trouver = $this->model->promotion->getAllPromotion();
+                    include(VIEW_ETUDIANT.'choixPromotion.php');
                 }else{
                     $notif = "mot de passe ou pseudo incorrecte";
                     include(VIEW_ETUDIANT.'authentification.php');
@@ -53,5 +55,12 @@
 
             $pdf->Output(STORAGE.'test.pdf', 'F');
 
+        }
+
+        public function getOption(){
+            $idPromotion = $_GET['id'];
+            $_SESSION['idPromotion'] = $idPromotion;
+            
+            require_once(VIEW_ADMIN.'option.php');
         }
     }

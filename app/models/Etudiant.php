@@ -2,11 +2,12 @@
     class Etudiant{
         private $matricule;
         private $code;
-        private $promotion;
+        public $promotion;
         private $bdd;
 
         public function __construct(){
             $this->bdd = new PDO("mysql:host=localhost;dbname=archive", "root", '');
+            $this->promotion = new Promotion();
         }
 
         public function setAtribut($matricule, $code){

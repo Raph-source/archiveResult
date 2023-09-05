@@ -7,7 +7,7 @@ if(isset($notif))
     echo $notif;
 
 foreach($trouver as $promotion){
-    echo '<a href="promotion-id-'.$promotion["id"].'" class="'.$promotion["nom"].'">'.$promotion["nom"].'</a><br>';
+    echo '<a href="promotion?id='.$promotion["id"].'" class="'.$promotion["nom"].'">'.$promotion["nom"].'</a><br>';
 }
 ?>
 
