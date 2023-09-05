@@ -3,3 +3,52 @@
     margin: 0%;
 }
 
+section{
+    width: 35%;
+    padding: 20px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    border-bottom: 4px solid green;
+}
+
+section p{
+    text-align: center;
+    font-size: 25px;
+    padding: 10px;
+    color: green;
+    font-weight: bold;
+    
+}
+section form input{
+    margin-top: 20px;
+    height: 70px;
+}
+
+section form hr{
+    margin-top: 30px;
+}
+
+section form input[type="submit"]{
+   width: 100%;
+   background-color: green;
+   border: 1px solid white;
+   font-weight: bold;
+}
+section form input[type="submit"]:hover{
+    width: 100%;
+    background-color: white;
+    border: 1px solid green;
+    color: green;
+}
+section form a{
+    text-decoration: none;
+    color: green;
+    margin-top: 20px;
+}
+section form a:hover{
+    text-decoration: underline;
+    color: green;
+}
