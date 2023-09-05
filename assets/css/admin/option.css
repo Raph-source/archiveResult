@@ -42,10 +42,15 @@ section .content_1 .block .image img, section .content_2 .block .image img{
 
 section .content_1 .block a, section .content_2 .block a{
     display: block;
-    padding: 20px;
+    padding: 10px;
     color: black;
     text-align: center;
     text-decoration: none;
     font-size: 25px;
+    margin-top: 30px;
     
+}
+section .content_1 .block a:hover, section .content_2 .block a:hover{
+    color: white;
+    background:green;
 }
