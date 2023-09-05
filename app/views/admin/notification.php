@@ -14,7 +14,8 @@ require_once(HEADER);
             }
         ?>
     </select><br>
-    <input type="submit" value="notifier">
+    <input type="submit" value="notifier"><br>
+    <a href="retour-option">Retour vers les options</a>
 </form>
 <?php
 require_once(FOOTER);
