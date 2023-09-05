@@ -7,7 +7,7 @@
 
 <section class="section">
         <p class="title">Esis Salama</p>
-        <form action="auth-etudiant" method="post" class="form-group">
+        <form action="auth-etudiant" method="get" class="form-group">
             <label for="">Matricule</label>
             <input type="text" name="matricule" class="form-control" placeholder="Entrez le matricule" id=""><br>
 

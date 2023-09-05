@@ -85,4 +85,8 @@
         public function donnerAcces(){
             
         }
+
+        public function retourOption(){
+            require_once(VIEW_ADMIN.'option.php');
+        }
     }

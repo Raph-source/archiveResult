@@ -15,7 +15,8 @@
                 'adminAuth' => 'authentification',
                 'publication' => 'getViewPublication',
                 'publication-resultat' => 'publication',
-                'formulaire-donner-acces' => 'donnerAcces'
+                'formulaire-donner-acces' => 'donnerAcces', 
+                'retour-option' => 'retourOption'
             ],
 
             'bulletin' => [
