@@ -11,3 +11,4 @@ include_once('option.php');
 <?php
 require_once(FOOTER);
 ?>
+ 

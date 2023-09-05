@@ -34,6 +34,9 @@ define('ASSETS_JS', HOST.'assets/js/');
 //chemin absolu vers l'assets boostrap 
 define('ASSETS_BOOTSTRAP', HOST.'assets/bootstrap/bootstrap.css');
 
+//chemin absolu vers les images
+define('ASSETS_IMG', HOST.'assets/img/');
+
 //chemin vers les bibiotheque
 define('BIBLIOTHEQUE', ROOT.'bibliotheque/');
 

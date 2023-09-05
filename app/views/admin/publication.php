@@ -1,15 +1,19 @@
 <?php
 $title = 'home';
 $style = ASSETS_CSS.'admin/publication.css';
+$bootstrap = ASSETS_BOOTSTRAP;
 require_once(HEADER);
 ?>
-<h1>Publication du résultat</h1>
-<form action="publication-resultat" method="post" enctype="multipart/form-data">
-    <label for="fichierExcel"></label>
-    <input type="file" name="fichierExcel" id=""><br>
-    <input type="submit" value="publier"><br>
-    <?php if(isset($notif)) echo $notif; ?>
-</form>
+
+<section>
+    <p>Publication du résultat</p>
+    <form action="publication-resultat" method="post" class="form-groupe" enctype="multipart/form-data">
+        <label for="fichierExcel">Choisissez un fichier</label>
+        <input  type="file" name="fichierExcel" id="" class="form-control">
+        <input  type="submit" value="publier" class="btn btn-primary"><br>
+        <?php if(isset($notif)) echo $notif; ?>
+    </form>
+</section>
 <?php
 require_once(FOOTER);
 ?>
