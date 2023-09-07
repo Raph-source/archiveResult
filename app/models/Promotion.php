@@ -30,4 +30,12 @@ class Promotion{
 
         return $trouver;
     }
+
+    public function getNom($id){
+        $requete = $this->bdd->prepare("SELECT nom FROM promotion WHERE id = ?");
+        $requete->execute([$id]);
+        $trouver = $requete->fetch();
+
+        return $trouver['nom'];
+    }
 } 
