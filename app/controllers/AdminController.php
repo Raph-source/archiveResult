@@ -119,25 +119,25 @@
         }
 
         public function getBloquerAcces(){
-            require_once(VIEW_ADMIN.'bolquerAcces.php');
+            require_once(VIEW_ADMIN.'bloquerAcces.php');
         }
 
         public function bloquerAcces(){
             if(!empty($_POST['matricule'])){
                 $matricule = htmlspecialchars($_POST['matricule']);
 
-                if($this->model->donnerAcces($matricule)){
-                    $notif = "acces accordé avec succès";
+                if($this->model->bloquerAcces($matricule)){
+                    $notif = "acces bloqué avec succès";
                 }
                 else{
                     $notif = "ce matricule n'est pas reconnu";
                 }
 
-                require_once(VIEW_ADMIN.'donnerAcces.php');
+                require_once(VIEW_ADMIN.'bloquerAcces.php');
             }
             else{
                 $notif = 'pas des champs vides svp !!!';
-                require_once(VIEW_ADMIN.'donnerAcces.php');
+                require_once(VIEW_ADMIN.'bloquerAcces.php');
             }
         }
     }

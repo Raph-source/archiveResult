@@ -43,4 +43,15 @@
             return false;
 
         }
+
+        public function bloquerAcces($matricule){
+            if($this->etudiant->checkMatricule($matricule)){
+                $idEtudiant = $this->etudiant->getIdByMatricule($matricule);
+
+                $requete = $this->bdd->prepare("DELETE FROM eligible WHERE idEtudiant = ?");
+                $requete->execute([$idEtudiant]);
+                return true;
+            }
+            return false;
+        }
     }

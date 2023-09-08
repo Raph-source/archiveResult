@@ -137,6 +137,13 @@ use PhpOffice\PhpSpreadsheet\Reader\Xls\Style\Border;
             }
             else{
                 $notif = "vous n'êtes pas en ordre avec le paiement";
+
+                $matricule = $_SESSION['matricule'];
+                $code = $_SESSION['code'];
+
+                $this->model->setAtribut($matricule, $code);
+                $archive = $this->model->getArchive();
+                
                 require_once(VIEW_ETUDIANT.'option.php');
             }
                 
