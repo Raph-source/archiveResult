@@ -8,7 +8,8 @@
                 'home' => 'getFormAuth',
                 'auth-etudiant' => 'authentification',
                 'voir-resultat' => 'voirResultat',
-                'promotion' => 'getOption'
+                'promotion' => 'getOption',
+                'archive-non-trouvé' => 'getMessageErreurArchive'
             ],
 
             'AdminController' => [

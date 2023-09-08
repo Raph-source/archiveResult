@@ -111,11 +111,14 @@ use PhpOffice\PhpSpreadsheet\Reader\Xls\Style\Border;
                 
 
                 //verifier si l'archive n'existe pas
-                $chemin = STORAGE.$nomPromotion.$matricule.'.pdf';
-                if($this->model->bulletin->checkChemin($chemin)){
+                $lienArchive = STORAGE_LINK.$nomPromotion.$matricule.'.pdf';
+                if($this->model->bulletin->checkLink($lienArchive)){
                     //génération du pdf (archive)
                     require_once(BIBLIOTHEQUE.'tcpdf/tcpdf.php');
                     $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+
+                    //chemin absolu de l'archive
+                    $chemin = STORAGE.$nomPromotion.$matricule.'.pdf';
 
                     $pdf->SetTitle('bulletin');
                     $pdf->AddPage();
@@ -123,10 +126,10 @@ use PhpOffice\PhpSpreadsheet\Reader\Xls\Style\Border;
 
                     $pdf->Output($chemin, 'F');
 
-                    $this->model->bulletin->addChemin($chemin);
+                    $this->model->bulletin->addLink($lienArchive);
 
                     //attribution de l'archive l'étudiant
-                    $idBulletin = $this->model->bulletin->getId($chemin);
+                    $idBulletin = $this->model->bulletin->getId($lienArchive);
                     $this->model->setIdBulletin($idBulletin);
 
                 }
@@ -143,7 +146,17 @@ use PhpOffice\PhpSpreadsheet\Reader\Xls\Style\Border;
             $idPromotion = $_GET['id'];
 
             $_SESSION['idPromotion'] = $idPromotion;
-            
+
+            //recupération des donnée mises en session
+            $matricule = $_SESSION['matricule'];
+            $code = $_SESSION['code'];
+
+            $this->model->setAtribut($matricule, $code);
+            $archive = $this->model->getArchive();
             require_once(VIEW_ETUDIANT.'option.php');
+        }
+
+        public function getMessageErreurArchive(){
+            require_once(VIEW_ETUDIANT.'erreurArchive.php');
         }
     }

@@ -4,15 +4,15 @@
         public function __construct(){
             $this->bdd = new PDO("mysql:host=localhost;dbname=archive", "root", '');
         }
-        public function addChemin($chemin):void{
-            $requette = $this->bdd->prepare("INSERT INTO bulletin(chemin) VALUES(?)");
-            $requette->execute([$chemin]);
+        public function addLink($lienArchive):void{
+            $requette = $this->bdd->prepare("INSERT INTO bulletin(lien) VALUES(?)");
+            $requette->execute([$lienArchive]);
         }
 
-        public function checkChemin($chemin):bool{
+        public function checkLink($lienArchive):bool{
 
-            $requete = $this->bdd->prepare("SELECT * FROM bulletin WHERE chemin = ?");
-            $requete->execute([$chemin]);
+            $requete = $this->bdd->prepare("SELECT * FROM bulletin WHERE lien = ?");
+            $requete->execute([$lienArchive]);
             $trouver = $requete->fetchAll();
 
             if(count($trouver) == 0){
@@ -20,9 +20,9 @@
             }
             return false;
         }
-        public function getId($chemin):int{
-            $requete = $this->bdd->prepare("SELECT id FROM bulletin WHERE chemin = ?");
-            $requete->execute([$chemin]);
+        public function getId($lienArchive):int{
+            $requete = $this->bdd->prepare("SELECT id FROM bulletin WHERE lien = ?");
+            $requete->execute([$lienArchive]);
 
             return $requete->fetch()['id'];
         }

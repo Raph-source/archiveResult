@@ -9,10 +9,7 @@ if(isset($notif))
 ?>
 
 <a href="voir-resultat">voir resultatt</a><br>
-<a href="//localhost/archiveResult/storage/test.pdf">voir archive</a><br>
-<a href="donnerAcces">Donner l'accès à un étudiant</a><br>
-<a href="bloquerAcces">Bloquer l'accès à un étudiant</a><br>
-
+<a href="<?php echo $archive ?>">voir archive</a><br>
 <?php
 require_once(FOOTER);
 ?>

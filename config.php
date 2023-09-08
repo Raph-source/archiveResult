@@ -43,5 +43,6 @@ define('BIBLIOTHEQUE', ROOT.'bibliotheque/');
 //chemin absolu vers les dossiers uploads
 define('UPLOADS', ROOT.'uploads/');
 
-//chemin absolu vers le dossier storage
+//chemin et lien absolu vers le dossier storage
 define('STORAGE', ROOT.'storage/');
+define('STORAGE_LINK', HOST.'storage/');
