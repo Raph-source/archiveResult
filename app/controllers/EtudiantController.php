@@ -127,7 +127,7 @@ use PhpOffice\PhpSpreadsheet\Reader\Xls\Style\Border;
 
                         $pdf->Output($chemin, 'F');
 
-                        $this->model->archive->addLink($lienArchive);
+                        $this->model->archive->addArchive($lienArchive, $idPromotion);
 
                         //attribution de l'archive l'étudiant
                         $idEtudiant = $this->model->getId();
@@ -147,7 +147,7 @@ use PhpOffice\PhpSpreadsheet\Reader\Xls\Style\Border;
                     $code = $_SESSION['code'];
 
                     $this->model->setAtribut($matricule, $code);
-                    $archive = $this->model->getArchive();
+                    $archive = $this->model->getArchive($idPromotion);
                     
                     require_once(VIEW.'etudiant/option.php');
                 }
@@ -172,7 +172,7 @@ use PhpOffice\PhpSpreadsheet\Reader\Xls\Style\Border;
                 $code = $_SESSION['code'];
 
                 $this->model->setAtribut($matricule, $code);
-                $archive = $this->model->getArchive();
+                $archive = $this->model->getArchive($idPromotion);
                 require_once(VIEW.'etudiant/option.php');
             }
             else{

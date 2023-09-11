@@ -4,9 +4,9 @@
         public function __construct(){
             $this->bdd = new PDO("mysql:host=localhost;dbname=archive", "root", '');
         }
-        public function addLink($lienArchive):void{
-            $requette = $this->bdd->prepare("INSERT INTO archive(lien) VALUES(?)");
-            $requette->execute([$lienArchive]);
+        public function addArchive($lienArchive, $idPromotion):void{
+            $requette = $this->bdd->prepare("INSERT INTO archive(lien, idPromotion) VALUES(?, ?)");
+            $requette->execute([$lienArchive, $idPromotion]);
         }
 
         public function checkLink($lienArchive):bool{

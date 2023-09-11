@@ -70,10 +70,10 @@
             return false;
         }
 
-        public function getArchive():string{
+        public function getArchive($idPromotion):string{
             $requete = $this->bdd->prepare("SELECT lien FROM etudiant AS e INNER JOIN archive AS a
-                                            ON e.id = a.idEtudiant WHERE e.matricule = ?");
-            $requete->execute([$this->matricule]);
+                                            ON e.id = a.idEtudiant WHERE e.matricule = ? AND a.idPromotion = ?");
+            $requete->execute([$this->matricule, $idPromotion]);
             $trouver = $requete->fetchAll();
             if(count($trouver) != 0)
                 return $trouver[0]['lien'];
