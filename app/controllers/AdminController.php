@@ -7,7 +7,7 @@
         }
         //cette méthode renvoi au formulaire d'authentification de l'admin
         public function getFormAuth(){
-            include(VIEW_ADMIN.'authentification.php');
+            include(VIEW.'admin/authentification.php');
         }
         //cette méthode vérifie l'authentification de l'admin
         public function authentification(){
@@ -17,20 +17,20 @@
 
                 $this->model->setAtribut($pseudo, $pwd);
                 if($this->model->checkAdmin()){
-                    include(VIEW_ADMIN.'home.php');
+                    include(VIEW.'admin/home.php');
                 }else{
                     $notif = "mot de passe ou pseudo incorrecte";
-                    include(VIEW_ADMIN.'authentification.php');
+                    include(VIEW.'admin/authentification.php');
                 }
             }
             else{
                 $notif = "Pas de champ vide";
-                include(VIEW_ADMIN.'authentification.php');
+                include(VIEW.'admin/authentification.php');
             }
         }
 
         public function getViewPublication(){
-            include_once(VIEW_ADMIN.'publication.php');
+            include_once(VIEW.'admin/publication.php');
         }
         //la méthode effectue l'upload du fichier excel
         public function publication(){
@@ -64,31 +64,31 @@
                         else{
                             $notif = "cette promotion n'existe pas<br>";
                         }
-                        include_once(VIEW_ADMIN.'home.php');
+                        include_once(VIEW.'admin/home.php');
                     }
                     else{
                         $notif = 'Erreur de l\'extension! Veuillez chosir un fichier xlsx';
-                        include_once(VIEW_ADMIN.'publication.php');
+                        include_once(VIEW.'admin/publication.php');
                     }
                 }
                 else{
                     $notif = 'la taille du fichier est trop grande';
-                    include_once(VIEW_ADMIN.'publication.php');
+                    include_once(VIEW.'admin/publication.php');
                 }
             }
             else{
                 $notif = "Veuillez selectionner le fichier excel";
-                include_once(VIEW_ADMIN.'publication.php');
+                include_once(VIEW.'admin/publication.php');
             }
         }
 
         public function retourOption(){
-            require_once(VIEW_ADMIN.'option.php');
+            require_once(VIEW.'admin/option.php');
         }
 
         public function getFormNotification(){
             $trouver = $this->model->promotion->getAllPromotion();
-            require_once(VIEW_ADMIN.'notification.php');
+            require_once(VIEW.'admin/notification.php');
         }
 
         public function notifier(){
@@ -96,7 +96,7 @@
         }
 
         public function getFormDonnerAcces(){
-            require_once(VIEW_ADMIN.'donnerAcces.php');    
+            require_once(VIEW.'admin/donnerAcces.php');    
         }
 
         public function donnerAcces(){
@@ -110,16 +110,16 @@
                     $notif = "ce matricule n'est pas reconnu";
                 }
 
-                require_once(VIEW_ADMIN.'donnerAcces.php');
+                require_once(VIEW.'admin/donnerAcces.php');
             }
             else{
                 $notif = 'pas des champs vides svp !!!';
-                require_once(VIEW_ADMIN.'donnerAcces.php');
+                require_once(VIEW.'admin/donnerAcces.php');
             }
         }
 
         public function getBloquerAcces(){
-            require_once(VIEW_ADMIN.'bloquerAcces.php');
+            require_once(VIEW.'admin/bloquerAcces.php');
         }
 
         public function bloquerAcces(){
@@ -133,11 +133,11 @@
                     $notif = "ce matricule n'est pas reconnu";
                 }
 
-                require_once(VIEW_ADMIN.'bloquerAcces.php');
+                require_once(VIEW.'admin/bloquerAcces.php');
             }
             else{
                 $notif = 'pas des champs vides svp !!!';
-                require_once(VIEW_ADMIN.'bloquerAcces.php');
+                require_once(VIEW.'admin/bloquerAcces.php');
             }
         }
     }

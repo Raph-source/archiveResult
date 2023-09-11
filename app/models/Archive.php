@@ -1,17 +1,17 @@
 <?php
-    class Bulletin{
+    class Archive{
         private $bdd;
         public function __construct(){
             $this->bdd = new PDO("mysql:host=localhost;dbname=archive", "root", '');
         }
         public function addLink($lienArchive):void{
-            $requette = $this->bdd->prepare("INSERT INTO bulletin(lien) VALUES(?)");
+            $requette = $this->bdd->prepare("INSERT INTO archive(lien) VALUES(?)");
             $requette->execute([$lienArchive]);
         }
 
         public function checkLink($lienArchive):bool{
 
-            $requete = $this->bdd->prepare("SELECT * FROM bulletin WHERE lien = ?");
+            $requete = $this->bdd->prepare("SELECT * FROM archive WHERE lien = ?");
             $requete->execute([$lienArchive]);
             $trouver = $requete->fetchAll();
 
@@ -20,10 +20,8 @@
             }
             return false;
         }
-        public function getId($lienArchive):int{
-            $requete = $this->bdd->prepare("SELECT id FROM bulletin WHERE lien = ?");
-            $requete->execute([$lienArchive]);
-
-            return $requete->fetch()['id'];
+        public function setIdEtudiant($idEtudiant, $lienArchive){
+            $requete = $this->bdd->prepare("UPDATE archive SET idEtudiant = ? WHERE lien = ?");
+            $requete->execute([$idEtudiant, $lienArchive]);
         }
     }

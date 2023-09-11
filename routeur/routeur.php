@@ -25,7 +25,7 @@
                 'formulaire-bloquer-acces' => 'bloquerAcces'
             ],
 
-            'bulletin' => [
+            'ArchiveController' => [
                 'bulletin' => 'afficher'
             ]
         ];
@@ -36,9 +36,8 @@
         //cette fonction renvoi au controleur demandé
         public function goToController(){
             //inclusion des controleurs
-            require_once(CONTROLLER_ETUDIANT);
-            require_once(CONTROLLER_ADMIN);
-            require_once(CONTROLLER_BULLETIN);
+            require_once(CONTROLLER.'EtudiantController.php');
+            require_once(CONTROLLER.'AdminController.php');
 
             //instantiation du controleur et déclanchement de la méthode
             $_404 = false;
