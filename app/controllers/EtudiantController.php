@@ -96,13 +96,13 @@ use PhpOffice\PhpSpreadsheet\Reader\Xls\Style\Border;
                         //affichage des moyennes
                         $data = $worksheet->getCellByColumnAndRow($i, 2);
 
-                        $resultat .=      "<td>".$data->getValue()."</td>";
+                        $resultat .= "<td>".$data->getValue()."</td>";
 
                         //affichage des sessions
                         $ligneCours = $i + 1;
                         $data = $worksheet->getCellByColumnAndRow($ligneCours, 2);
 
-                        $resultat .=      "<td>".$data->getValue()."</td>
+                        $resultat .= "<td>".$data->getValue()."</td>
                                 </tr>";
                     }
 
