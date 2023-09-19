@@ -8,6 +8,7 @@ require_once(HEADER);
     <p>Donner Accès</p>
     <form action="formulaire-donner-acces" method="post" class="form-group">
         <input type="text" name="matricule" id="" class="form-control" placeholder="Entrez le matricule de l'etudiant"><br>
+        <hr>
         <input type="submit" value="valider" class="btn btn-primary">
     </form>
     <?php if(isset($notif)) echo $notif;?>
