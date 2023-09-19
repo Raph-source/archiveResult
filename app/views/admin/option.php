@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="<?php echo ASSETS_CSS.'admin/option.css'?>">
 
-<section>
+<section id="option">
         <div class="content_1">
             <div class="block">
                 <div class="image">
@@ -33,4 +33,4 @@
                 <a href="bloquerAcces">Bloquer l'accès à un étudiant</a>
             </div>
         </div>
-    </section>
+</section>

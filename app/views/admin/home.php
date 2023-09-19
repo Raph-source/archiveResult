@@ -6,7 +6,10 @@ require_once(HEADER);
 if(isset($notif))
     echo $notif;
 ?>
-<section class="header">
+<section class="header" id="header">
+    <div class="nomAppli">
+        <p>Archive<span class="result">Result</span></p>
+    </div>
     <div class="nom_connecte">
         <p><strong><?php if (isset($_SESSION['pseudoAdmin']))echo ucfirst($_SESSION['pseudoAdmin']);?></strong> est connecté</pack>
     </div>
