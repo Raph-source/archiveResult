@@ -14,9 +14,11 @@ require_once(HEADER);
         <hr>
 
         <input  type="submit" value="Publier" class="btn btn-primary">
-        <a href="retour-option">Retour sur les options</a>
-        <?php if(isset($notif)) echo $notif; ?>
-    </form>
+        <a href="retour-option">Retour sur les options</a><br>
+        
+    </form> 
+    <?php if(isset($notif)) echo '<span class="erreurPub">'.$notif.'</span>'; ?>
+   
 </section>
 <?php
 require_once(FOOTER);

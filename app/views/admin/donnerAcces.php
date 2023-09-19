@@ -1,14 +1,17 @@
 <?php 
 $title = 'donner accés';
 $style = ASSETS_CSS.'admin/donnerAcces.css';
+$bootstrap = ASSETS_BOOTSTRAP;
 require_once(HEADER);
 ?>
-    <form action="formulaire-donner-acces" method="post">
-        <input type="text" name="matricule" id="" placeholder="Entrez le matricule de l'etudiant"><br>
-        <input type="submit" value="valider">
+<section>
+    <p>Donner Accès</p>
+    <form action="formulaire-donner-acces" method="post" class="form-group">
+        <input type="text" name="matricule" id="" class="form-control" placeholder="Entrez le matricule de l'etudiant"><br>
+        <input type="submit" value="valider" class="btn btn-primary">
     </form>
     <?php if(isset($notif)) echo $notif;?>
-    
+</section>
 <?php 
 $srcipt = ASSETS_JS.'admin/donnerAccer.js';
 require_once(FOOTER); 

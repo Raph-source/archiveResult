@@ -1,3 +1,41 @@
-h1{
-    background-color: bisque;
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body .header{
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    display:flex;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    border-bottom: 4px solid green;
+    justify-content: space-between;
+    padding: 20px;
+}
+body .header .nom_connecte{
+    font-size: 25px;
+}
+
+body .header .nom_connecte p{
+    margin-left: 90px;
+}
+
+body .header .deconnexion{
+    margin-right: 150px;
+    margin-top: 3px;
+}
+body .header .deconnexion a{
+    border: 2px solid green;
+    padding: 10px 10px;
+    border-radius: 4px;
+    color: green;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+body .header .deconnexion a:hover{    
+    color: white;
+    background-color: green;
 }

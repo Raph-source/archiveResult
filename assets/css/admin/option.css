@@ -11,7 +11,7 @@ section{
 section .content_1, section .content_2{
     display: flex;
     justify-content: space-between;
-    margin-top: 80px;
+    margin-top: 50px;
 }
 section .content_1 .block, section .content_2 .block{
     width: 40%;

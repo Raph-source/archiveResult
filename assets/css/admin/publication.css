@@ -52,3 +52,6 @@ section form a:hover{
     text-decoration: underline;
     color: green;
 }
+section form span{
+    color: red;
+}
