@@ -15,6 +15,8 @@
                 $pseudo = htmlspecialchars($_POST['pseudo']);
                 $pwd = htmlspecialchars($_POST['pwd']);
 
+                $_SESSION['pseudoAdmin'] = $pseudo;
+
                 $this->model->setAtribut($pseudo, $pwd);
                 if($this->model->checkAdmin()){
                     include(VIEW.'admin/home.php');
@@ -82,8 +84,8 @@
             }
         }
 
-        public function retourOption(){
-            require_once(VIEW.'admin/option.php');
+        public function retourHome(){
+            require_once(VIEW.'admin/home.php');
         }
 
         public function getFormNotification(){
@@ -139,5 +141,10 @@
                 $notif = 'pas des champs vides svp !!!';
                 require_once(VIEW.'admin/bloquerAcces.php');
             }
+        }
+
+        public function deconnexion(){
+            session_destroy();
+            require_once(VIEW.'admin/authentification.php');
         }
     }

@@ -18,8 +18,9 @@ require_once(HEADER);
         </select><br>
         <hr>
         <input type="submit" value="Notifier"><br>
-        <a href="retour-option">Retour vers les options</a>
+        <a href="retour-home">Retour vers l'acceuil</a>
     </form>
+    
 </section>
 <?php
 require_once(FOOTER);

@@ -8,16 +8,18 @@ if(isset($notif))
 ?>
 <section class="header">
     <div class="nom_connecte">
-        <p>Admin <strong>Pseudo</strong> est connecté</pack>
+        <p><strong><?php if (isset($_SESSION['pseudoAdmin']))echo ucfirst($_SESSION['pseudoAdmin']);?></strong> est connecté</pack>
     </div>
     <div class="deconnexion">
-        <a href="#">Deconnexion</a>
+        <a href="deconnexion-admin">Deconnexion</a>
     </div>
 </section>
 <?php
 include_once('option.php');
 ?>
 <?php
+$jquery = ASSETS_JS.'jquery-3.7.0.min.js';
+$script = ASSETS_JS.'admin/home.js';
 require_once(FOOTER);
 ?>
  

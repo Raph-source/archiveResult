@@ -12,6 +12,7 @@ require_once(HEADER);
         <input type="submit" value="valider" class="btn btn-primary">
     </form>
     <?php if(isset($notif)) echo $notif;?>
+    <a href="retour-home">Retour vers l'acceuil</a>
 </section>
 <?php 
 $srcipt = ASSETS_JS.'admin/donnerAccer.js';

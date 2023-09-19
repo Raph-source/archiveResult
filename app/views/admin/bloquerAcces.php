@@ -8,7 +8,7 @@ require_once(HEADER);
         <input type="submit" value="valider">
     </form>
     <?php if(isset($notif)) echo $notif;?>
-    <a href="retour-option">Retour vers les options</a>
+    <a href="retour-home">Retour vers l'acceuil</a>
 <?php 
 $srcipt = ASSETS_JS.'admin/bloquerAccer.js';
 require_once(FOOTER); 

@@ -18,11 +18,12 @@
                 'publication' => 'getViewPublication',
                 'publication-resultat' => 'publication',
                 'formulaire-donner-acces' => 'donnerAcces', 
-                'retour-option' => 'retourOption',
+                'retour-home' => 'retourHome',
                 'notification' => 'getFormNotification',
                 'donnerAcces' => 'getFormDonnerAcces',
                 'bloquerAcces' => 'getBloquerAcces',
-                'formulaire-bloquer-acces' => 'bloquerAcces'
+                'formulaire-bloquer-acces' => 'bloquerAcces',
+                'deconnexion-admin' => 'deconnexion'
             ],
 
             'ArchiveController' => [
