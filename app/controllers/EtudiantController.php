@@ -125,7 +125,7 @@ use PhpOffice\PhpSpreadsheet\Reader\Xls\Style\Border;
                         $pdf->writeHTML($resultat);
 
                         $pdf->Output($chemin, 'F');
-
+                        //ajouter l'archive
                         $this->model->archive->addArchive($lienArchive, $idPromotion);
 
                         //attribution de l'archive l'étudiant
