@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin:0;
+}
+body{
+    background-color: rgb(250, 250, 250)
+}
+
+section{
+    display: flex;
+    background-color: white;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    border-bottom: 4px solid green;
+    padding: 50px;
+    justify-content: space-between;
+}
+
+section  a{
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+    color: green;
+    border: 1px solid green;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+}
+section a:hover{
+    background-color: green;
+    color: white;
+}
+
+div{
+    background: #008000;
+    margin-top: 150px;
+}
+
+div p{
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-size: 25px;
+}

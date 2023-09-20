@@ -7,9 +7,14 @@ if(isset($notif))
     echo $notif.'<br>';
 
 ?>
+<section>
+    <a href="voir-resultat">voir resultatt</a>
+    <a href="<?php echo $archive ?>">voir archive</a>
+</section>
+<div>
+    <p>Archive Result 2023</p>
+</div>
 
-<a href="voir-resultat">voir resultatt</a><br>
-<a href="<?php echo $archive ?>">voir archive</a><br>
 <?php
 require_once(FOOTER);
 ?>
