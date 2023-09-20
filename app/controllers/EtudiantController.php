@@ -71,15 +71,14 @@ use PhpOffice\PhpSpreadsheet\Reader\Xls\Style\Border;
                     //les en-tête du relever des côtes
                     $resultat = "<table border=1s
                                 style=\" border:solid black;
-                                        background-color:cyan;
+                                        background-color:blue;
                                         border-collapse:collapse;
                                     \">
                                 <thead  style=\"border:solid black;\">
-                                    <tr  style=\" border:solid black;\">
-                                        <th> cours</th>
-                                        <th> moyenne</th>
-                                        <th> session</th>
-                                        <th> total</th>
+                                    <tr  style=\" :;\">
+                                        <th style=\"padding : 20px;\"> cours</th>
+                                        <th style=\"padding : 20px;\"> moyenne</th>
+                                        <th style=\"padding : 20px;\"> session</th>
                                     </tr>
                                 </thead>
                                 <tbody  style=\"border:solid black;\">"; 
