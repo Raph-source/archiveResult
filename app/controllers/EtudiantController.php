@@ -70,18 +70,18 @@ use PhpOffice\PhpSpreadsheet\Reader\Xls\Style\Border;
                     
                     //les en-tête du relever des côtes
                     $resultat = "<table border=1s
-                                style=\" border:solid black;
-                                        background-color:blue;
+                                style=\" border:;
+                                        background-color:;
                                         border-collapse:collapse;
                                     \">
-                                <thead  style=\"border:solid black;\">
+                                <thead  style=\"border:;\">
                                     <tr  style=\" :;\">
-                                        <th style=\"padding : 20px;\"> cours</th>
-                                        <th style=\"padding : 20px;\"> moyenne</th>
-                                        <th style=\"padding : 20px;\"> session</th>
+                                        <th style=\"padding : 20px; background:green; color:white;\"> Cours</th>
+                                        <th style=\"padding : 20px; background:green; color:white;\"> Moyenne</th>
+                                        <th style=\"padding : 20px; background:green; color:white;\"> Session</th>
                                     </tr>
                                 </thead>
-                                <tbody  style=\"border:solid black;\">"; 
+                                <tbody  style=\"border:;\">"; 
                     
                     //création du relever de côte
                     
@@ -89,7 +89,7 @@ use PhpOffice\PhpSpreadsheet\Reader\Xls\Style\Border;
                         //affichage nom des cours
                         $data = $worksheet->getCellByColumnAndRow($i, 1);
                         $resultat .= "<tr>
-                                    <td>".$data->getValue()."</td>";
+                                    <td style=\"padding : 20px 5px; boder:none;\">".$data->getValue()."</td>";
 
                         
                         //affichage des moyennes

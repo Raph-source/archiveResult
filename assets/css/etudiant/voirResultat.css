@@ -8,12 +8,13 @@ body{
 
 div{
     background-color: white;
-    width: 35%;
+    width: 25%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 70px;
+    margin-top: 50px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     border-bottom: 4px solid green;
+    border-top: 4px solid green;
     padding: 30px;
 }
