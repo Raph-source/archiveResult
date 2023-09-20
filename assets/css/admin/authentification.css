@@ -14,15 +14,15 @@ section{
     margin-right: auto;
     margin-top: 70px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    border-bottom: 4px solid green;
 }
 
 section .title{
-    background: green;
-    color: white;
+    color: green;
     padding: 20px;
     text-align: center;
-    font-size: 2rem;
-    letter-spacing: 0.1em;
+    font-size: 18px;
 }
 
 section form{
